@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
         Score++;
         scoreText.setText("Score :" + Score);
         sleep(0b110010);
+        // github commmit test
 
     }
 
