@@ -4,12 +4,16 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -27,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     Button tryX;
     TextView scoreText;
     TextView timeText;
+    TextView lastSC;
+    TextView bestSC;
     int Score;
     ImageView imageView;
     ImageView imageView1;
@@ -40,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
     ImageView[] imageArray;
     Handler handler;
     Runnable runnable;
-
+    SharedPreferences sharedPref;
+    int savedIntL;
+    int savedIntB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +71,23 @@ public class MainActivity extends AppCompatActivity {
         imageArray = new ImageView[]{imageView, imageView1, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8};
         tryX = findViewById(R.id.tryXButton);
         tryX.setVisibility(View.INVISIBLE);
+        lastSC = findViewById(R.id.lastSC);
+        bestSC = findViewById(R.id.bestSC);
+
+
+
+        sharedPref = getPreferences(Context.MODE_PRIVATE);
+        savedIntL = sharedPref.getInt("score",5);
+        savedIntB = sharedPref.getInt("best_score",4);
+
+        lastSC.setText("Last Sc: "+savedIntL);
+        bestSC.setText("Best Sc:" + savedIntB);
+
+
+        Log.i("firat",savedIntB+"<-best");
+
+
+
         hideImages();
 
         Score = 0;
@@ -78,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+
 
                 timeText.setText("Time Off");
                 handler.removeCallbacks(runnable);
@@ -115,6 +141,17 @@ public class MainActivity extends AppCompatActivity {
 
                 alert.show();
 
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putInt("score",Score);
+
+
+
+                int s = sharedPref.getInt("best_score",0);
+                if (Score > s){
+                    editor.putInt("best_score",Score);
+                }
+                editor.commit();
+
             }
         }.start();
 
@@ -126,8 +163,6 @@ public class MainActivity extends AppCompatActivity {
         Score++;
         scoreText.setText("Score :" + Score);
         sleep(0b110010);
-        // github commmit test
-
 
     }
 
@@ -167,7 +202,17 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         finish();
         startActivity(intent);
+
+        if(Score>savedIntL) {
+            bestSC.setText("Best Sc"+savedIntB);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt("bestscore",Score);
+            editor.commit();
+
+            }
+
+        }
+
     }
 
 
-}
