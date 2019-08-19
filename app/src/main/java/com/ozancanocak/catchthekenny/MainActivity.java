@@ -24,6 +24,7 @@ import static java.lang.Thread.sleep;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button tryX;
     TextView scoreText;
     TextView timeText;
     int Score;
@@ -60,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         imageView7 = findViewById(R.id.imageView7);
         imageView8 = findViewById(R.id.imageView8);
         imageArray = new ImageView[]{imageView, imageView1, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8};
-
+        tryX = findViewById(R.id.tryXButton);
+        tryX.setVisibility(View.INVISIBLE);
         hideImages();
 
         Score = 0;
@@ -94,13 +96,14 @@ public class MainActivity extends AppCompatActivity {
 
                         //restart
 
-                        Intent intent = getIntent();
-                        finish();
-                        startActivity(intent);
+                        restartGame();
 
                     }
 
                 });
+
+
+                tryX.setVisibility(View.VISIBLE);
 
                 alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
@@ -142,18 +145,29 @@ public class MainActivity extends AppCompatActivity {
 
                     image.setVisibility(View.INVISIBLE);
 
-            }
+                }
                 Random random = new Random();
                 int i = random.nextInt(9);
                 imageArray[i].setVisibility(View.VISIBLE);
 
                 handler.postDelayed(this,250);
 
-                }
-            };
-            handler.post(runnable);
-
-        }
+            }
+        };
+        handler.post(runnable);
 
     }
 
+    public void tryA(View view) {
+        restartGame();
+
+    }
+
+    public void restartGame() {
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+    }
+
+
+}
