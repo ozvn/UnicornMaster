@@ -1,7 +1,7 @@
 # UnicornMaster-CatchUnicornGame
 Unicorn Master - Unicorn Yakalama Oyunu ( Catch Unircorn Game )
 
-![Unicorn Master](https://fastly.4sqi.net/img/user/130x130/25751808_7p2wt7L4_uspnksQXsa8yGLRw8blh8qGeWYN_76Mjq1h7MRMZlXNZ6PrtADQsd2QwvMIUCoEB.jpg)
+![Unicorn Master](https://lh3.googleusercontent.com/MOLnQHORc6ipThyohXtt8XlfWVHdPBKwXSuHPr56yTGcWY4TrVIEuVCVrQVu2OtccFfZ=s180-rw)
 
 ## English:
 
@@ -13,7 +13,7 @@ Unicorn Master - Unicorn Yakalama Oyunu ( Catch Unircorn Game )
 **Sound System** : Every 5 score point makes a bubble sound  <br/>
 
 
-[Google Play Link](http://www.google.com)
+[Google Play Link](https://play.google.com/store/apps/details?id=com.ozancanocak.catchthekenny)
 
 ## Türkçe:
 
@@ -25,7 +25,7 @@ Unicorn Master - Unicorn Yakalama Oyunu ( Catch Unircorn Game )
 **Ses Sistemi** : Her 5 skor, baloncuk sesi çıkarır.  <br/>
 
 
-[Google Play Adresi](http://www.google.com)
+[Google Play Adresi](https://play.google.com/store/apps/details?id=com.ozancanocak.catchthekenny)
 
 <br/>
 
