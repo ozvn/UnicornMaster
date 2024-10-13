@@ -12,21 +12,6 @@ Unicorn Master - Unicorn Yakalama Oyunu ( Catch Unircorn Game )
 **Difficulty System** : Changeable game speed <br/>
 **Sound System** : Every 5 score point makes a bubble sound  <br/>
 
-
-[Google Play Link](https://play.google.com/store/apps/details?id=com.ozancanocak.catchthekenny)
-
-## Türkçe:
-
-**Skor Sistemi** : Her dokunuş bir puan değerindedir <br/>
-**Şeker Sistemi** : Her 10 puan bir şeker kazandırır <br/>
-**Market Sistemi** : Şeker ile farklı karakterler satın alabilirsiniz <br/>
-**Level Sistemi** : Şeker bağlantılı level sistemi <br/>
-**Zorluk Sistemi** : Değiştirilebilir oyun hızı <br/>
-**Ses Sistemi** : Her 5 skor, baloncuk sesi çıkarır.  <br/>
-
-
-[Google Play Adresi](https://play.google.com/store/apps/details?id=com.ozancanocak.catchthekenny)
-
 <br/>
 
 
